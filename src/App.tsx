@@ -5,7 +5,6 @@ import './App.css';
 
 function App() {
   const [walletAddress, setWalletAddress] = useState<string>('');
-  const [balance, setBalance] = useState<string>('');
 
   const handleCopy = (): void => {
     navigator.clipboard.writeText(walletAddress);
@@ -40,13 +39,8 @@ function App() {
     if (typeof window.ethereum !== 'undefined') {
       await requestWallet();
 
-      const provider = new ethers.BrowserProvider(window.ethereum);
+      //const provider = new ethers.BrowserProvider(window.ethereum);
 
-      const balance = await provider.getBalance('ethers.eth').then((num) => {
-        return ethers.formatEther(num);
-      });
-
-      setBalance(balance);
     }
   }
 

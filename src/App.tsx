@@ -18,7 +18,7 @@ function App() {
   }
 
   const requestWallet = async () => {
-    if (window.ethereum) {
+    if (window.ethereum !== 'undefined') {
 
       try {
         const accounts = await window.ethereum.request({

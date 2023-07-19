@@ -39,7 +39,8 @@ function App() {
     if (typeof window.ethereum !== 'undefined') {
       await requestWallet();
 
-      //const provider = new ethers.BrowserProvider(window.ethereum);
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      console.log(provider);
 
     }
   }
